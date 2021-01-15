@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 {% block body %}
 <div>
+    <p>div du Meilleur Film</p>
     {% if best_movie %}
-    <p><img src="{{ best_movie.image_url }}" alt="Le meilleur film"/></p>
-    <p>Titre : {{ best_movie.title }}</p>
-    <p>Description : {{ best_movie.description }}</p>
+        <p><img src="{{ best_movie.image_url }}" alt="Le meilleur film"/></p>
+        <p>Titre : {{ best_movie.title }}</p>
+        <p>Description : {{ best_movie.description }}</p>
     {% else %}
-    <p>Probleme recuperation meilleur film</p>
+        <p>Probleme recuperation meilleur film</p>
     {% endif %}
 </div>
 <div>
-    <ul>
-
-    </ul>
+    <p>div des 7 Meilleurs Films</p>
+     {% if bests_movies %}
+        {% for movie in bests_movies %}
+            <ul>
+                <div><img src="{{ movie.image_url }}" alt="Le meilleur film"/></div>
+                <div>Titre : {{ movie.title }}</div>
+                <div>Description : {{ movie.description }}</div>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>Probleme recuperation meilleurs films</p>
+    {% endif %}
 </div>
 {% endblock %}
