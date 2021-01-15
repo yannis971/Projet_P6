@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div>
+    {% if best_movie %}
+    <p><img src="{{ best_movie.image_url }}" alt="Le meilleur film"/></p>
+    <p>Titre : {{ best_movie.title }}</p>
+    <p>Description : {{ best_movie.description }}</p>
+    {% else %}
+    <p>Probleme recuperation meilleur film</p>
+    {% endif %}
+</div>
+<div>
+    <ul>
+
+    </ul>
+</div>
+{% endblock %}
