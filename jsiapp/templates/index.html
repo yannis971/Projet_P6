@@ -1,27 +1,13 @@
 {% extends 'base.html' %}
 {% block body %}
-<div>
-    <p>div du Meilleur Film</p>
-    {% if best_movie %}
-        <p><img src="{{ best_movie.image_url }}" alt="Le meilleur film"/></p>
-        <p>Titre : {{ best_movie.title }}</p>
-        <p>Description : {{ best_movie.description }}</p>
-    {% else %}
-        <p>Probleme recuperation meilleur film</p>
-    {% endif %}
+
+<div id="the_best_movie">
+    <script src="{{ url_for('static', filename='js/the_best_movie.js') }}" type="text/javascript"></script>
 </div>
-<div>
-    <p>div des 7 Meilleurs Films</p>
-     {% if bests_movies %}
-        {% for movie in bests_movies %}
-            <ul>
-                <div><img src="{{ movie.image_url }}" alt="Le meilleur film"/></div>
-                <div>Titre : {{ movie.title }}</div>
-                <div>Description : {{ movie.description }}</div>
-            </ul>
-        {% endfor %}
-    {% else %}
-        <p>Probleme recuperation meilleurs films</p>
-    {% endif %}
+<div id="best_movies">
+  <script src="{{ url_for('static', filename='js/best_movies.js') }}" type="text/javascript"></script>
+</div>
+<div id="best_movies_by_category">
+    <script src="{{ url_for('static', filename='js/best_movies_by_category.js') }}" type="text/javascript"></script>
 </div>
 {% endblock %}
