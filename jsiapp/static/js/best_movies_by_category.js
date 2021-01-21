@@ -21,7 +21,7 @@ async function renderBestMoviesByCategory() {
     //HTML rendering
     htmlSegment += `<h2>Categorie : ${category['name']}</h2>`
     htmlSegment += `<div class="list-movies">`;
-    for (bestMovieAwait of bestMoviesAwait) {
+    for (let bestMovieAwait of bestMoviesAwait) {
       bestMovie = JSON.parse(bestMovieAwait);
       htmlSegment += `<div class="movie">
                         <div class="movie-url">${bestMovie.url}</div>

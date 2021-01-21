@@ -10,16 +10,13 @@ async function getBestMovies(url, nbMoviesMax, shift) {
     let i = 0;
     while (i < nbMoviesMax) {
       //Fetching the best movies in the MovieList
-      let response = await fetch(nextUrl);
-      let json = await response.json();
+      let json = await fetchMovies(nextUrl);
       let results = json['results'];
       nextUrl = json['next'];
       //Fetching the best movies in the Movie Title Detail
-      for (result of results) {
+      for (let result of results) {
         if (i < nbMoviesMax) {
-          let urlDetail = result['url'];
-          resp = await fetch(urlDetail);
-          listOfBestMovies.push(await resp.text());
+          listOfBestMovies.push(await fetchMovieDetail(result['url']));
         }
         i++;
       }
@@ -27,9 +24,7 @@ async function getBestMovies(url, nbMoviesMax, shift) {
   } catch (error) {
     console.log(error);
   }
-  if (shift) {
-    listOfBestMovies.shift();
-  }
+  if (shift) { listOfBestMovies.shift(); }
   return listOfBestMovies;
 }
 
@@ -41,7 +36,7 @@ async function renderBestMovies() {
   let html = '';
   let htmlSegment = `<h2>Films les mieux notés</h2>`;
   htmlSegment += `<div class="list-movies">`;
-  for (bestMovieAwait of bestMoviesAwait) {
+  for (let bestMovieAwait of bestMoviesAwait) {
     bestMovie = JSON.parse(bestMovieAwait);
     htmlSegment += `<div class="movie"><div class="movie-url">${bestMovie.url}</div>
     <img src="${bestMovie.image_url}"></div>`;
