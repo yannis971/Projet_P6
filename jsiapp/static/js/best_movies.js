@@ -33,19 +33,15 @@ async function renderBestMovies() {
   //constante URL_BEST_MOVIES non définie alors qu'elle l'est dans the_best_movies.js ???
   //let bestMoviesAwait = await getBestMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score", NB_MOVIES_MAX + 1, true);
   //HTML rendering
-  let html = '';
-  let htmlSegment = `<h2>Films les mieux notés</h2>`;
-  htmlSegment += `<div class="list-movies">`;
-  for (let bestMovieAwait of bestMoviesAwait) {
-    bestMovie = JSON.parse(bestMovieAwait);
-    htmlSegment += `<div class="movie"><div class="movie-url">${bestMovie.url}</div>
-    <img src="${bestMovie.image_url}"></div>`;
+  let best_movies_container = document.querySelector("#best_movies");
+  let balises_a = best_movies_container.querySelectorAll('a');
+  let balises_img = best_movies_container.querySelectorAll('img');
+  for (let i = 0; i < NB_MOVIES_MAX; i++) {
+    let bestMovie = JSON.parse(bestMoviesAwait[i]);
+    balises_a[i].setAttribute('href', bestMovie.url);
+    balises_img[i].setAttribute('src', bestMovie.image_url);
+    balises_img[i].setAttribute('alt', bestMovie.title);
   }
-  htmlSegment += `</div>`;
-  html += htmlSegment;
-  //Binding the html to the_best_movie div
-  let best_movies = document.querySelector('#best_movies');
-  best_movies.innerHTML = html;
 }
 
 renderBestMovies();

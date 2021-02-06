@@ -1,3 +1,4 @@
+start.sh
 env/
 *.pyc
 __pycache__

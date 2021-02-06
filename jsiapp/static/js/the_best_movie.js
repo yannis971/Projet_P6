@@ -39,18 +39,20 @@ async function renderTheBestMovie() {
   * asynchronous function to render the best movie into the html page
   */
   let theBestMovie = JSON.parse(await getTheBestMovie());
-  //HTML rendering
-  let html = '';
-  let htmlSegment = `<h2>Meilleur Film</h2>
-                      <div class="best-movie">
-                        <h3>${theBestMovie.title}</h3>
-                        <div class="movie-url">${theBestMovie.url}</div>
-                        <img src="${theBestMovie.image_url}" alt="${theBestMovie.title}" >
-                     </div>`;
-  html += htmlSegment;
-  //Binding the html to the_best_movie div
-  let the_best_movie = document.querySelector('#the_best_movie');
-  the_best_movie.innerHTML = html;
+
+  // the best movie title
+  let the_best_movie_title = document.querySelector('#the_best_movie_title');
+  the_best_movie_title.textContent = theBestMovie.title;
+
+  // the best_movie url
+  let the_best_movie_url = document.querySelector('#the_best_movie_url');
+  the_best_movie_url.setAttribute('href', theBestMovie.url);
+
+  // the best movie image
+  let the_best_movie_img = document.querySelector('#the_best_movie_img');
+  the_best_movie_img.setAttribute('src', theBestMovie.image_url);
+  the_best_movie_img.setAttribute('alt', theBestMovie.title);
+
 }
 
 renderTheBestMovie();
