@@ -34,7 +34,7 @@ async function renderBestMovies() {
   //let bestMoviesAwait = await getBestMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score", NB_MOVIES_MAX + 1, true);
   //HTML rendering
   let best_movies_container = document.querySelector("#best_movies");
-  let balises_a = best_movies_container.querySelectorAll('a');
+  let balises_a = best_movies_container.querySelectorAll('.js-modal');
   let balises_img = best_movies_container.querySelectorAll('img');
   for (let i = 0; i < NB_MOVIES_MAX; i++) {
     let bestMovie = JSON.parse(bestMoviesAwait[i]);
