@@ -19,7 +19,7 @@ async function renderBestMoviesByCategory() {
     let id = "#category_" + j;
     let best_movies_container = document.querySelector(id);
     let balise_h2 = best_movies_container.querySelector('h2');
-    let balises_a = best_movies_container.querySelectorAll('a');
+    let balises_a = best_movies_container.querySelectorAll('.js-modal');
     let balises_img = best_movies_container.querySelectorAll('img');
 
     let cle = MOVIE_CATEGORIES[j];
