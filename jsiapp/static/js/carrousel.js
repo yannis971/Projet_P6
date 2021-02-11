@@ -5,6 +5,8 @@ const nbItems = 4;
 const showSlides = function(slideIndex, i) {
   let carrousel = document.querySelector(carrouselId[i]);
   let slides = carrousel.querySelectorAll('.movie');
+  // Gérer un affichage en boucle infinie
+
   if ((slideIndex + nbItems -1) > slides.length) {
     slideIndexes[i] = 1;
   }
@@ -45,7 +47,8 @@ for (let i = 0; i < slideIndexes.length; i++) {
 }
 
 document.querySelectorAll('.prev').forEach(a => {
-  a.addEventListener('click', prevSlides);
+  //a.addEventListener('click', prevSlides(e, ));
+  a.addEventListener('click', plusSlides(this, +1));
 });
 
 document.querySelectorAll('.next').forEach(a => {
