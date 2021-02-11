@@ -9,7 +9,7 @@ const showSlides = function(slideIndex, i) {
     slideIndexes[i] = 1;
   }
   if (slideIndex < 1) {
-    slideIndexes[i] = slides.length;
+    slideIndexes[i] = slides.length - nbItems + 1;
   }
   let iMin = slideIndexes[i] - 1;
   let iMax = iMin + nbItems;
@@ -45,7 +45,7 @@ for (let i = 0; i < slideIndexes.length; i++) {
 }
 
 document.querySelectorAll('.prev').forEach(a => {
-  a.addEventListener('click', nextSlides);
+  a.addEventListener('click', prevSlides);
 });
 
 document.querySelectorAll('.next').forEach(a => {
