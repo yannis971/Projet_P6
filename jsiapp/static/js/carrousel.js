@@ -47,8 +47,8 @@ for (let i = 0; i < slideIndexes.length; i++) {
 }
 
 document.querySelectorAll('.prev').forEach(a => {
-  //a.addEventListener('click', prevSlides(e, ));
-  a.addEventListener('click', plusSlides(this, +1));
+  a.addEventListener('click', prevSlides);
+  //a.addEventListener('click', plusSlides(this, +1));
 });
 
 document.querySelectorAll('.next').forEach(a => {
