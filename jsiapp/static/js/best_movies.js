@@ -41,6 +41,9 @@ async function renderBestMovies() {
     balises_a[i].setAttribute('href', bestMovie.url);
     balises_img[i].setAttribute('src', bestMovie.image_url);
     balises_img[i].setAttribute('alt', bestMovie.title);
+    balises_a[i + NB_MOVIES_MAX].setAttribute('href', bestMovie.url);
+    balises_img[i + NB_MOVIES_MAX].setAttribute('src', bestMovie.image_url);
+    balises_img[i + NB_MOVIES_MAX].setAttribute('alt', bestMovie.title);
   }
 }
 
