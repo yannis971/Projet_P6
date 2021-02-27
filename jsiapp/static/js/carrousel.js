@@ -1,28 +1,26 @@
-let slideIndexes = [1, 1, 1, 1];
 let carrouselId = ["#carrousel_0", "#carrousel_1", "#carrousel_2", "#carrousel_3"];
+let slideIndexes = [0, 0, 0, 0];
 const nbItems = 4;
 
-const showSlides = function(slideIndex, i) {
-  let carrousel = document.querySelector(carrouselId[i]);
+const showSlides = function(indice_carrousel, position) {
+  let carrousel = document.querySelector(carrouselId[indice_carrousel]);
   let slides = carrousel.querySelectorAll('.movie');
-  // Gérer un affichage en boucle infinie
-
-  if ((slideIndex + nbItems -1) > slides.length) {
-    slideIndexes[i] = 1;
+  if (position > slides.length - nbItems) {
+    position = position - (slides.length / 2);
   }
-  if (slideIndex < 1) {
-    slideIndexes[i] = slides.length - nbItems + 1;
+  if (position < 0) {
+    position = (slides.length / 2) - 1;
   }
-  let iMin = slideIndexes[i] - 1;
-  let iMax = iMin + nbItems;
+  slideIndexes[indice_carrousel] = position;
   for (let i = 0; i < slides.length; i++) {
-    if (i >= iMin && i < iMax) {
-      slides[i].style.display = "block";
+    if (i < position) {
+        slides[i].style.display = "none";
+    } else if (i < position + nbItems) {
+        slides[i].style.display = "block";
+    } else {
+        slides[i].style.display = "none";
     }
-    else {
-      slides[i].style.display = "none";
-    }
-  }
+ }
 }
 
 const nextSlides = function(e) {
@@ -38,17 +36,15 @@ const plusSlides = function(e, n) {
   let id = e.target.parentElement.getAttribute('id');
   let i = carrouselId.indexOf('#' + id);
   slideIndexes[i] += n;
-  showSlides(slideIndexes[i], i);
+  showSlides(i, slideIndexes[i]);
 }
 
-
-for (let i = 0; i < slideIndexes.length; i++) {
-  showSlides(slideIndexes[i], i);
+for (let i = 0; i < carrouselId.length; i++) {
+  showSlides(i, slideIndexes[i]);
 }
 
 document.querySelectorAll('.prev').forEach(a => {
   a.addEventListener('click', prevSlides);
-  //a.addEventListener('click', plusSlides(this, +1));
 });
 
 document.querySelectorAll('.next').forEach(a => {
