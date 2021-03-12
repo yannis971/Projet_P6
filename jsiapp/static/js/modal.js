@@ -49,7 +49,7 @@ const openModal = async function (e) {
   modal_genres.textContent = modal_genres.textContent.substr(3);
   // Sa date de sortie
   modal_date_published = document.getElementById("myModal_date_published");
-  modal_date_published.textContent = theMovie.date_publisged;
+  modal_date_published.textContent = theMovie.date_published;
   // Son Rated
   modal_rated = document.getElementById("myModal_rated");
   modal_rated.textContent = theMovie.rated;
