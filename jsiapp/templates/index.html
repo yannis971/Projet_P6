@@ -9,49 +9,27 @@
             <h2 id="myModal_title"></h2>
         </div>
         <div class="modal-body">
-            <p><img id="myModal_img" src=""/></p>
-            <table>
-                <tr>
-                    <td>Genre complet du film</td>
-                    <td id="myModal_genres"></td>
-                </tr>
-                <tr>
-                    <td>Date de sortie</td>
-                    <td id="myModal_date_published"></td>
-                </tr>
-                <tr>
-                    <td>Rated</td>
-                    <td id="myModal_rated"></td>
-                </tr>
-                <tr>
-                    <td>Score IMDB</td>
-                    <td id="myModal_imdb_score"></td>
-                </tr>
-                <tr>
-                    <td>Réalisateurs</td>
-                    <td id="myModal_directors"></td>
-                </tr>
-                <tr>
-                    <td>Acteurs</td>
-                    <td id="myModal_actors"></td>
-                </tr>
-                <tr>
-                    <td>Durée en minutes</td>
-                    <td id="myModal_duration"></td>
-                </tr>
-                <tr>
-                    <td>Pays d'origine</td>
-                    <td id="myModal_countries"></td>
-                </tr>
-                <tr>
-                    <td>Résultat au box office</td>
-                    <td id="myModal_worldwide_gross_income"></td>
-                </tr>
-                <tr>
-                    <td>Résumé du film</td>
-                    <td id="myModal_long_description"></td>
-                </tr>
-            </table>
+            <img id="myModal_img" src=""/>
+            <h3>Genre complet du film</h3>
+            <p id="myModal_genres"></p>
+            <h3>Date de sortie</h3>
+            <p id="myModal_date_published"></p>
+            <h3>Rated</h3>
+            <p id="myModal_rated"></p>
+            <h3>Score IMDB</h3>
+            <p id="myModal_imdb_score"></p>
+            <h3>Réalisateurs</h3>
+            <p id="myModal_directors"></p>
+            <h3>Acteurs</h3>
+            <p id="myModal_actors"></p>
+            <h3>Durée en minutes</h3>
+            <p id="myModal_duration"></p>
+            <h3>Pays d'origine</h3>
+            <p id="myModal_countries"></p>
+            <h3>Résultat au box office</h3>
+            <p id="myModal_worldwide_gross_income"></p>
+            <h3>Résumé du film</h3>
+            <p id="myModal_long_description"></p>
         </div>
     </div>
 </aside>
@@ -59,13 +37,15 @@
 
 <h2>Meilleur Film</h2>
 <section id="the_best_movie" class="best-movie">
-    <div id="best_movie_left">
+    <div id="the_best_movie_left_box">
         <h3 id="the_best_movie_title"></h3>
         <button id="the_best_movie_play_button" class="play-button" type="button">Play</button>
     </div>
-    <a id="the_best_movie_url" class="js-modal" href="">
-        <img id="the_best_movie_img" class="best-movie" src="" alt=""/>
-    </a>
+    <div id="the_best_movie_right_box">
+        <a id="the_best_movie_url" class="js-modal" href="">
+            <img id="the_best_movie_img" class="best-movie" src="" alt=""/>
+        </a>
+    </div>
     <script src="{{ url_for('static', filename='js/the_best_movie.js') }}"></script>
 </section>
 

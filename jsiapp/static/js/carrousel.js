@@ -1,6 +1,18 @@
 let carrouselId = ["#carrousel_0", "#carrousel_1", "#carrousel_2", "#carrousel_3"];
 let slideIndexes = [0, 0, 0, 0];
-const NB_SLIDES_TO_SHOW = 4;
+
+const nbSlidesToShow = function() {
+  console.log(window.innerWidth);
+  if (window.innerWidth >= 1368) {
+    return 4;
+  } else if (window.innerWidth >=1024) {
+    return 3;
+  } else if (window.innerWidth > 768)  {
+    return 2;
+  } else {
+    return 1;
+  }
+}
 
 /**
 * Shows the slides of a carrousel from a predicted position
@@ -10,7 +22,8 @@ const NB_SLIDES_TO_SHOW = 4;
 const showSlides = function(carrouselIndex, currentSlideIndex) {
   let carrousel = document.querySelector(carrouselId[carrouselIndex]);
   let slides = carrousel.querySelectorAll('.movie');
-  if (currentSlideIndex > slides.length - NB_SLIDES_TO_SHOW) {
+  let nbSlides = nbSlidesToShow();
+  if (currentSlideIndex > slides.length - nbSlides) {
     currentSlideIndex = currentSlideIndex - (slides.length / 2);
   }
   if (currentSlideIndex < 0) {
@@ -20,7 +33,7 @@ const showSlides = function(carrouselIndex, currentSlideIndex) {
   for (let i = 0; i < slides.length; i++) {
     if (i < currentSlideIndex) {
         slides[i].style.display = "none";
-    } else if (i < currentSlideIndex + NB_SLIDES_TO_SHOW) {
+    } else if (i < currentSlideIndex + nbSlides) {
         slides[i].style.display = "block";
     } else {
         slides[i].style.display = "none";
@@ -60,10 +73,13 @@ const plusSlides = function(e, n) {
 /**
 * Initial loop to show slides
 */
-
-for (let i = 0; i < carrouselId.length; i++) {
-  showSlides(i, slideIndexes[i]);
+const showCarrousels = function() {
+  for (let i = 0; i < carrouselId.length; i++) {
+    showSlides(i, slideIndexes[i]);
+  }
 }
+
+showCarrousels();
 
 /**
 forEach loop on every "prev" links to bind click event on prevSlides function
@@ -78,3 +94,5 @@ forEach loop on every "next" links to bind click event on nextSlides function
 document.querySelectorAll('.next').forEach(a => {
   a.addEventListener('click', nextSlides);
 });
+
+window.addEventListener('resize', showCarrousels);
