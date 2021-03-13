@@ -4,14 +4,12 @@
   justify-content: space-around;
   border: 5px solid black;
   padding: 10px;
-  /*width: 50%;
-  margin:auto;*/
 }
 
 #the_best_movie_left_box {
   flex-grow: 1;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
 }
 
 .left-box-item {

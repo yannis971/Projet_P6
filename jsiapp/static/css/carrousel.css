@@ -20,7 +20,7 @@
 .slideshow-container {
   /*max-width: 1024px;*/
   position: relative;
-  margin: auto;
+  /*margin: auto;*/
 }
 
 /* Next & previous buttons */
@@ -59,8 +59,6 @@
 .list-movies {
   display: flex;
   justify-content: center;
-  margin: auto;
-  width: 60%;
   list-style-type: none;
 }
 
