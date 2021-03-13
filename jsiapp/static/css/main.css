@@ -5,14 +5,14 @@ body {
 #bloc_de_page
 {
   margin: auto;
-  width: 60%;
-  min-width: 1024px;
+  width: 70%;
+  min-width: 768px;
 }
 
 header
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background-color: #6f7a82;
 
@@ -23,6 +23,9 @@ header h1
   font-family: 'Oxygen', sans-serif;
   font-weight: 100;
   color: white;
+  padding-left : 20px;
+  padding-right : 20px;
+  margin-right: 80px;
 }
 
 /* Navigation */
@@ -56,58 +59,24 @@ nav a:hover
 
 h2 {
   text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: black;
+  text-decoration: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.best-movie {
-  display: flex;
-  justify-content: center;
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  #bloc_de_page
+  {
+    margin: 0;
+    width:auto;
+  }
+  nav ul {
+    display: none;
+  }
 
-
-
-
-.list-movies {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 60%;
-  min-width: 1024px;
-  list-style-type: none;
-}
-
-.movie img {
-  margin: 5px;
-  border-style: solid;
-  border-color: black;
-  border-width: 5px;
-}
-.movie-url {
-  display: none;
-}
-
-.play-button {
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-}
-
-.play-button:hover {
-    background-color: rgba(255, 0, 0, 1);
-}
-
-.play-button:active {
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                inset 2px 2px 3px rgba(0, 0, 0, .6);
 }

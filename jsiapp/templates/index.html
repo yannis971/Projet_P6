@@ -38,15 +38,15 @@
 <h2>Meilleur Film</h2>
 <section id="the_best_movie" class="best-movie">
     <div id="the_best_movie_left_box">
-        <h3 id="the_best_movie_title"></h3>
-        <button id="the_best_movie_play_button" class="play-button" type="button">Play</button>
+        <div class="left-box-item"><h3 id="the_best_movie_title"></h3></div>
+        <div class="left-box-item"><button id="the_best_movie_play_button" class="play-button" type="button">Play</button></div>
     </div>
     <div id="the_best_movie_right_box">
         <a id="the_best_movie_url" class="js-modal" href="">
             <img id="the_best_movie_img" class="best-movie" src="" alt=""/>
         </a>
     </div>
-    <script src="{{ url_for('static', filename='js/the_best_movie.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/the_best_movie.js') }}" async></script>
 </section>
 
 
@@ -72,7 +72,7 @@
         </ul>
         <a class="next">&#10095;</a>
     </div>
-    <script src="{{ url_for('static', filename='js/best_movies.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/best_movies.js') }}" async></script>
 </section>
 
 
@@ -146,11 +146,11 @@
             <a class="next">&#10095;</a>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/best_movies_by_category.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/best_movies_by_category.js') }}" async></script>
 </section>
 
 
-<script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modal.js') }}" async></script>
 <script src="{{ url_for('static', filename='js/carrousel.js') }}"></script>
 
 {% endblock %}
