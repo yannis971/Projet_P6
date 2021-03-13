@@ -10,20 +10,42 @@
 
 #the_best_movie_left_box {
   flex-grow: 1;
+  flex-direction: column;
+  justify-content:center;
 }
 
-#the_best_movie_right_box {
-  flex-grow: 3;
-}
-
-#the_best_movie_img {
-  width:364px;
-  height:268px;
+.left-box-item {
+  margin-top: 50px;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
 
+#the_best_movie_title {
+    text-align: center;
+    position: relative;
+    top:50%;
+}
+
+#the_best_movie_right_box {
+  flex-grow: 1;
+  width: auto;
+  margin: auto;
+}
+
+#the_best_movie_img {
+  position:relative;
+  width: 33%;
+  height:268px;
+  padding-left: 33%;
+  padding-right: 33%;
+}
+
 .play-button {
+    position:relative;
+    display:inline-block;
+    width: 90%;
+    left:5%;
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
