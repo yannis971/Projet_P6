@@ -69,3 +69,20 @@
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  #the_best_movie_img {
+    position:relative;
+    width: 182px;
+    height:268px;
+    padding-left: auto;
+    padding-right: auto;
+  }
+  .left-box-item {
+    margin-top: 50px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
