@@ -42,7 +42,7 @@
 .play-button {
     position:relative;
     display:inline-block;
-    width: 90%;
+    width: 80px;
     left:5%;
     border: 0;
     line-height: 2.5;
