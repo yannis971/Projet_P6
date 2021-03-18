@@ -33,6 +33,7 @@ nav ul
 {
   list-style-type: none;
   display: flex;
+  flex-direction: row;
 }
 
 nav li
@@ -67,6 +68,9 @@ h2 {
   margin-bottom: 50px;
 }
 
+#menu {
+  display: none;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
   #bloc_de_page
@@ -76,6 +80,14 @@ h2 {
   }
   nav ul {
     display: none;
+  }
+  #menu {
+    display: block;
+    position:absolute;
+    width: auto;
+    padding: 5px;
+    marging: 5px;
+    right:0;
   }
 
 }
