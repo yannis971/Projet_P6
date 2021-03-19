@@ -20,30 +20,28 @@
 }
 
 #the_best_movie_title {
-    text-align: center;
+    text-align: left;
     position: relative;
     top:50%;
 }
 
 #the_best_movie_right_box {
   flex-grow: 1;
-  width: auto;
-  margin: auto;
 }
 
 #the_best_movie_img {
   position:relative;
   width: 33%;
+  min-width: 182px;
   height:268px;
-  padding-left: 33%;
-  padding-right: 33%;
+  left:33%;
+  border: 5px solid black;
 }
 
 .play-button {
     position:relative;
     display:inline-block;
     width: 80px;
-    left:5%;
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
@@ -73,11 +71,9 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
   #the_best_movie_img {
-    position:relative;
     width: 182px;
-    height:268px;
-    padding-left: auto;
-    padding-right: auto;
+    left:0;
+    margin:auto;
   }
   .left-box-item {
     margin-top: 50px;

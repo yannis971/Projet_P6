@@ -8,6 +8,11 @@ body {
   width: 70%;
 }
 
+#contenu_de_page
+{
+  position:relative;
+}
+
 header
 {
   display: flex;
@@ -75,19 +80,46 @@ h2 {
 @media only screen and (max-width: 768px) {
   #bloc_de_page
   {
+    position:relative;
     margin: 0;
     width:auto;
   }
   nav ul {
     display: none;
   }
+
   #menu {
     display: block;
     position:absolute;
     width: auto;
     padding: 5px;
-    marging: 5px;
+    margin: 5px;
     right:0;
+  }
+
+  nav.responsive {
+    display:block;
+    position: absolute;
+    padding: 0;
+    top:83px;
+    width: 100%;
+    left:0;
+    background-color: #6f7a82;
+    opacity: 0.7;  
+  }
+
+  nav.responsive ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contenu_de_page.responsive {
+    display:block;
+    position: absolute;
+    padding: 0;
+    top:185px;
+    width: 100%;
+    left:0;
   }
 
 }
