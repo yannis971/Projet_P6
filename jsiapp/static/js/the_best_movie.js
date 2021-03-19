@@ -1,5 +1,10 @@
 const URL_BEST_MOVIES = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
 
+/**
+* Asynchronous function that fetches a list of movie from an url
+* @param {string} url : the url to fecth
+* @return : an await response as a JSON object
+* */
 async function fetchMovies(url) {
   try {
     let response = await fetch(url);
@@ -9,6 +14,11 @@ async function fetchMovies(url) {
   }
 }
 
+/**
+* Asynchronous function that fetches the movie details 
+* @param {string} url : the url to fecth
+* @return : an await response as a JSON object
+* */
 async function fetchMovieDetail(url) {
   try {
     resp = await fetch(url);

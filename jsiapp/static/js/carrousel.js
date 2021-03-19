@@ -1,8 +1,11 @@
 let carrouselId = ["#carrousel_0", "#carrousel_1", "#carrousel_2", "#carrousel_3"];
 let slideIndexes = [0, 0, 0, 0];
 
+/**
+* Function that returns the number of visible slides given the window.innerWidth
+* @return : {number} : the number of slides to show
+* */
 const nbSlidesToShow = function() {
-  console.log(window.innerWidth);
   if (window.innerWidth >= 1368) {
     return 4;
   } else if (window.innerWidth >=1024) {
@@ -21,7 +24,7 @@ const nbSlidesToShow = function() {
 */
 const showSlides = function(carrouselIndex, currentSlideIndex) {
   let carrousel = document.querySelector(carrouselId[carrouselIndex]);
-  let slides = carrousel.querySelectorAll('.movie');
+  let slides = carrousel.querySelectorAll('.carrousel-item');
   let nbSlides = nbSlidesToShow();
   if (currentSlideIndex > slides.length - nbSlides) {
     currentSlideIndex = currentSlideIndex - (slides.length / 2);

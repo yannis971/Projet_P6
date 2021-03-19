@@ -13,6 +13,9 @@ const MOVIE_CATEGORIES = [
   }
 ];
 
+/**
+* Asynchronous function that render the html code of the best movies by categories
+* */
 async function renderBestMoviesByCategory() {
 
   for (let j = 0; j < MOVIE_CATEGORIES.length; j++) {

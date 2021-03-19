@@ -14,6 +14,11 @@ let modal_worldwide_gross_income = null;
 let modal_long_description = null;
 let url = null;
 
+/**
+* function that closes (hides) the modal
+* @param {event} e : the clik event
+*
+* */
 const closeModal = function(e) {
   modal.style.display = "none";
   modal_genres.textContent = "";
@@ -22,6 +27,11 @@ const closeModal = function(e) {
   modal_countries.textContent = "";
 }
 
+/**
+* function that opens (shows) the modal
+* @param {event} e : the clik event
+*
+* */
 const openModal = async function (e) {
   e.preventDefault();
 
