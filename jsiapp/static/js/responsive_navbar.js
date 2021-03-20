@@ -17,7 +17,6 @@ const showMenu = function(e) {
   } else {
     contenuPage.className = "";
   }
-
 }
 
 let menuShow = document.querySelector('#menu_show');
