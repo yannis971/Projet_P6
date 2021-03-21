@@ -37,10 +37,10 @@ Pour les récupérer, l'application utilise l'API Fetch en langage Javascript as
 
 #### GitFlow du projet
 
-Les branches du projet :
+Le projet est organisé en 2 branches :
 
-* Branche de développement `p6_dev`
-* Branche 'main' et 'master' : version finale
+* Branche de développement : `p6_dev`
+* Branche principale (version stable du projet) : `main`
 
 ### 2) Installation du serveur de données OCMovies-API sur votre machine
 
@@ -147,9 +147,15 @@ La page web JustStreamIt s'affiche dans votre navigateur.
 
 Ci-après quelques captures d'écran.
 
+Mode Desktop (affichage plein écran)
+
 ![](images/p6_img_05.png)
 
+Mode Mobile
+
 ![](images/p6_img_06.png)
+
+Mode Mobile : affichage du menu de navigation après avoir cliqué sur l'icone menu en haut à droite.
 
 ![](images/p6_img_07.png)
 
